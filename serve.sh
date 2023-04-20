@@ -34,7 +34,7 @@ if [ ! -f "$in" ]; then
 fi
 
 # change .c to .out
-out=${1%.c}.out
+out=_${1%.c}.out
 
 # build
 echo "[ BUILD ] Building $in"
