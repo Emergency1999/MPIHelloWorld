@@ -1,54 +1,23 @@
-# MPI Hello World
+# MPI Tutorium
 
-## Installation unter Linux oder WSL
+## Installation unter Windows mit WSL (nur ein mal nötig)
 
-Anweisungen von hier befolgen: [WSL/VM installieren](https://bookstack.kamaux.de/books/it-tools/page/wslvm-installieren)
+1. [VScode installieren](https://code.visualstudio.com/download)
+2. [WSL/VM installieren](https://bookstack.kamaux.de/books/it-tools/page/wsl-installieren)
+3. [Projekt klonen und MPI installieren](https://bookstack.kamaux.de/books/oth/page/ca-linuxwsl-vorbereiten)
 
-## Installation OpenMPI
+## Installation unter Linux (nur ein mal nötig)
 
-Bash starten und folgende Befehle ausführen:
+1. [VScode installieren](https://code.visualstudio.com/download)
+2. [Projekt klonen und MPI installieren](https://bookstack.kamaux.de/books/oth/page/ca-linuxwsl-vorbereiten)
 
-WSL: Windows Taste + "Ubuntu", oder in der Console `wsl` eingeben
+## Installation auf CIP-Pool (jedes mal nötig)
 
+1. [MPI und VScode installieren, Projekt klonen](https://bookstack.kamaux.de/books/oth/page/ca-cip-pool-vm-vorbereiten)
 
-```bash
-# install tools
-sudo apt update && sudo apt install openmpi-bin libopenmpi-dev -y
+## Projekte bauen und ausführen
 
-# check version
-mpicc --showme:version
-
-# deactivate warning
-echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-```
-
-## Repository klonen
-
-
-<!-- Stelle sicher das du im dem Ordner bist, in dem das Repository gespeichert werden soll.  
-Unter WSL sind alle Windowsdateien unter `/mnt/c/` (oder `/mnt/d/` etc.) zu finden.
-
-Bsp. für Speicherort: `cd /mnt/c/Users/<user>/Documents` -->
-
-
-das Repository klonen:
-    
-    git clone https://github.com/Emergency1999/MPIHelloWorld.git
-
-oder mit SSH:
-
-    git clone git@github.com:Emergency1999/MPIHelloWorld.git
-
-### Open in VScode
-
-Das Projekt in VScode öffnen:
-```bash
-code .
-```
-
-### Build and run
-
-Entweder kann das Skript `serve.sh` ausgeführt werden oder manuell die Befehle ausführen. 
+Entweder kann das Skript `serve.sh` ausgeführt werden oder manuell die Befehle ausführen.
 
 script:
 
@@ -56,7 +25,9 @@ script:
 chmod +x serve.sh
 ./serve.sh mpi_hello_world.c
 ```
+
 die serve.sh startet standardmäßig 4 Prozesse, kann aber auch als 2. Parameter angegeben werden:
+
 ```bash
 ./serve.sh mpi_hello_world.c 4
 ```
